@@ -13,17 +13,17 @@ class AppTheme {
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: kScaffoldBackgroundColor,
     appBarTheme: AppBarTheme(
-      backgroundColor: kPrimaryColor,
-      foregroundColor: kWhite,
+      backgroundColor: kWhite,
+      foregroundColor: kBlackLight,
       elevation: 0,
-      titleTextStyle: GoogleFonts.inter(
-        fontSize: 18,
+      titleTextStyle: GoogleFonts.notoSerifBengali(
+        fontSize: 16,
       ),
       systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
+        statusBarColor: Colors.white,
 
         /// Status bar brightness (optional)
-        statusBarIconBrightness: Brightness.light, // For Android (light icons)
+        statusBarIconBrightness: Brightness.dark, // For Android (light icons)
         statusBarBrightness: Brightness.light, // For iOS (dark icons)
       ),
     ),
@@ -31,7 +31,7 @@ class AppTheme {
       backgroundColor: kPrimaryColor,
       foregroundColor: kWhite,
     ),
-    textTheme: GoogleFonts.poppinsTextTheme(Typography.blackCupertino),
+    textTheme: GoogleFonts.notoSerifBengaliTextTheme(Typography.blackCupertino),
     checkboxTheme: CheckboxThemeData(
       fillColor: MaterialStatePropertyAll(kPrimaryColor),
       checkColor: MaterialStatePropertyAll(kWhite),
