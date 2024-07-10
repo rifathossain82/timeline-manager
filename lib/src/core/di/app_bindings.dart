@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:timeline_manager/src/core/routes/navigation_controller.dart';
+import 'package:timeline_manager/src/features/dashboard/controller/dashboard_controller.dart';
 
 class AppBindings extends Bindings {
   @override
   void dependencies() {
-    // Get.lazyPut(() => NavigationController(), fenix: true);
+    Get.lazyPut(() => DashboardController(), fenix: true);
   }
 }

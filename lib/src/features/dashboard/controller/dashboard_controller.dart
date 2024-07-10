@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:timeline_manager/src/features/home/view/pages/home_page.dart';
 
 class DashboardController extends GetxController {
   var currentIndex = 0.obs;
@@ -9,7 +10,7 @@ class DashboardController extends GetxController {
   }
 
   final List<Widget> _pages = [
-    const ColoredBox(color: Colors.blue),
+    const Homepage(),
     ColoredBox(color: Colors.blueGrey.shade900),
     const ColoredBox(color: Colors.orange),
     const ColoredBox(color: Colors.pink),

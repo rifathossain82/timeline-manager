@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';
 import 'package:timeline_manager/src/features/dashboard/controller/dashboard_controller.dart';
 import 'package:timeline_manager/src/features/dashboard/model/bottom_appbar_item_model.dart';
@@ -16,19 +18,29 @@ class DashboardBottomAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      height: 60,
+      height: 75,
       color: Colors.white,
       shape: const CircularNotchedRectangle(),
       notchMargin: 5,
       child: Row(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: items.map((item) => _BottomAppBarItem(
-          item: item,
-          onPressed: () => _onPressedItem(item.index),
-          currentIndex: dashboardController.currentIndex.value,
-        )).toList(),
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          /// Left side items
+          ...items.take(items.length ~/ 2).map((item) => _BottomAppBarItem(
+            item: item,
+            onPressed: () => _onPressedItem(item.index),
+            currentIndex: dashboardController.currentIndex.value,
+          )),
+          /// Spacer in the middle
+          SizedBox(width: context.screenWidth * 0.05),
+          /// Right side items
+          ...items.skip(items.length ~/ 2).map((item) => _BottomAppBarItem(
+            item: item,
+            onPressed: () => _onPressedItem(item.index),
+            currentIndex: dashboardController.currentIndex.value,
+          )),
+        ],
       ),
     );
   }
@@ -53,7 +65,7 @@ class _BottomAppBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isSelected = currentIndex == item.index;
     return SizedBox(
-      height: 60,
+      height: 75,
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: onPressed,
@@ -61,12 +73,32 @@ class _BottomAppBarItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset(
+            SvgPicture.asset(
               isSelected ? item.selectedIconPath : item.unselectedIconPath,
-              color: kBlackLight,
-              height: 20,
-              width: 20,
+              colorFilter: ColorFilter.mode(kBlackLight, BlendMode.srcIn),
+              height: 24,
+              width: 24,
             ),
+            const SizedBox(height: 4),
+            isSelected
+                ? Container(
+                    height: 4,
+                    width: 4,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        colors: [
+                          gradiantColor1,
+                          gradiantColor2,
+                        ],
+                      ),
+                    ),
+                  )
+                : const SizedBox(
+                    height: 4,
+                    width: 4,
+                  ),
           ],
         ),
       ),
