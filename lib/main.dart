@@ -40,9 +40,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppConstants.appName,
       theme: AppTheme.lightTheme,
+      initialBinding: AppBindings(),
       initialRoute: RouteGenerator.dashboard,
       getPages: RouteGenerator.routes,
-      initialBinding: AppBindings(),
+      defaultTransition: Transition.fade,
     );
   }
 }

@@ -1,58 +1,29 @@
 import 'package:flutter/material.dart';
 
-Color kPrimaryColor = const Color(0xFF3e60db);
-Color kScaffoldBackgroundColor = Colors.white;
+const Color kPrimaryColor = Color(0xFF3e60db);
+const Color kScaffoldBackgroundColor = Colors.white;
 
-Color gradiantColor1 = const Color(0xFF86B560);
-Color gradiantColor2 = const Color(0xFF336F4A);
+const Color gradiantColor1 = Color(0xFF86B560);
+const Color gradiantColor2 = Color(0xFF336F4A);
 
-Color successColor = Colors.green;
-Color failedColor = Colors.red;
-Color warningColor = Colors.orange;
+const Color successColor = Colors.green;
+const Color failedColor = Colors.red;
+const Color warningColor = Colors.orange;
 
-Color kWhite = Colors.white;
-Color kRed = Colors.red;
-Color kRedLight = const Color(0xFFf36d58);
-Color kRedMedium = const Color(0xFFff4f5a);
-Color kRedDeep = const Color(0xFFF71B24);
-Color kBlack = Colors.black;
-Color kBlackLight = const Color(0xFF303030);
-Color kBlackMedium = const Color(0xFF404040);
-Color kBlue = const Color(0xFF3879E9);
-Color kBlueMedium = const Color(0xFF2F5BE0);
-Color kBlueLight = const Color(0xFFC7D0EC);
-Color kBlueDark = const Color(0xFF243E8B);
-Color kGrey = const Color(0xFF9EA1B6);
-Color kGreyMedium = const Color(0xFFC4C4C4);
-Color kGreyLight = const Color(0xFFe7e7e6);
-Color kGreen = const Color(0xFF1CAF5E);
-Color kOrange = const Color(0xFFFFA800);
-Color kOrangeLight = const Color(0xFFFF6A6A);
-Color kDeepOrange = const Color(0xFFFF5F2D);
-Color kDefaultScaffoldBgColor = const Color(0xFFeeeeef);
+const Color kWhite = Colors.white;
+const Color kRed = Colors.red;
+const Color kBlack = Colors.black;
+const Color kBlackLight = Color(0xFF202020);
+const Color kGrey = Color(0xFF9EA1B6);
+const Color kGreyLight = Color(0xFFF4F5F6);
+const Color kGreyTextColor = Color(0xFF6A6A6A);
 
-Color kShadowColor = const Color(0xFF616161).withOpacity(0.1);
-Color kItemShadowColor = const Color(0xFF000000).withOpacity(0.10);
-Color kItemBlueShadowColor = const Color(0xFFEFF3FF);
-Color kGreyTextColor = const Color(0xFFA5A5A5);
-Color kDividerColor = const Color(0xFFE8ECF2);
-Color kBlueGrey = const Color(0xFF7D8FAB);
-Color? kDarkBlueGrey = Colors.blueGrey[900];
-Color kSplashScreenBgColor = const Color(0xFF1e3784);
-Color kHighlightColor = const Color.fromRGBO(62,96,219, .2);
+const Color menuBackgroundColor = Color(0xFFF6F6F6);
+const Color kDividerColor = Color(0xFFE8ECF2);
+const Color kShimmerBaseColor = Color(0xFFE0E0E0); // Equivalent to Colors.grey.shade300
+const Color kShimmerHighlightColor = Color(0xFFF5F5F5); // Equivalent to Colors.grey.shade100
 
-Color kShimmerBaseColor = Colors.grey.shade300;
-Color kShimmerHighlightColor = Colors.grey.shade100;
-
-final List<Color> randomColors = [
-  Colors.deepOrange,
-  Colors.blue,
-  Colors.green,
-  Colors.teal,
-  Colors.purple,
-];
-
-Map<int, Color> materialColor = const {
+const Map<int, Color> materialColor = {
   50: Color.fromRGBO(62,96,219, .1),
   100: Color.fromRGBO(62,96,219, .2),
   200: Color.fromRGBO(62,96,219, .3),
@@ -65,7 +36,7 @@ Map<int, Color> materialColor = const {
   900: Color.fromRGBO(62,96,219, 1),
 };
 
-MaterialColor kPrimarySwatchColor = MaterialColor(
+const MaterialColor kPrimarySwatchColor = MaterialColor(
   0xFF3e60db,
   materialColor,
 );
