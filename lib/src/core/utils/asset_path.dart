@@ -2,7 +2,7 @@ class AssetPath{
 
   /// images
   static const String appLogo = 'assets/images/app_logo.png';
-  static const String profile = 'assets/images/people.png';
+  static const String person = 'assets/images/person.png';
   static const String placeholder = 'assets/images/placeholder.png';
 
 
@@ -26,7 +26,7 @@ class AssetPath{
   static const String menuIcon5 = 'assets/icons/menu5.svg';
   static const String menuIcon6 = 'assets/icons/menu6.svg';
   static const String notificationIcon = 'assets/icons/notification.svg';
-  static const String personIcon = 'assets/icons/person.svg';
+  static const String locationIcon = 'assets/icons/location.svg';
 
 
   /// lotties

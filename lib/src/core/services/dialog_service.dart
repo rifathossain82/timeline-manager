@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
+import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';
 import 'package:timeline_manager/src/core/widgets/k_button.dart';
 import 'package:timeline_manager/src/core/widgets/k_outlined_button.dart';
@@ -45,7 +46,7 @@ class DialogService {
                     borderRadius: 4,
                     child: Text(
                       negativeActionText,
-                      style: context.outlinedButtonTextStyle,
+                      style: context.outlinedButtonTextStyle(),
                     ),
                   ),
                 ),
@@ -57,7 +58,7 @@ class DialogService {
                     borderRadius: 4,
                     child: Text(
                       positiveActionText,
-                      style: context.buttonTextStyle,
+                      style: context.buttonTextStyle(),
                     ),
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
+import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';
 import 'package:timeline_manager/src/core/widgets/k_button_progress_indicator.dart';
 
@@ -54,7 +55,7 @@ class KIconButton extends StatelessWidget {
                 Flexible(
                   child: Text(
                     title,
-                    style: textStyle ?? context.buttonTextStyle,
+                    style: textStyle ?? context.buttonTextStyle(),
                   ),
                 ),
               ],

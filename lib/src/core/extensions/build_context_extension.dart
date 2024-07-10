@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:timeline_manager/src/core/utils/color.dart';
 
 extension BuildContextExtension on BuildContext {
   void unFocusKeyboard() {
@@ -28,20 +27,6 @@ extension BuildContextExtension on BuildContext {
   Color get scaffoldBackgroundColor => Theme.of(this).scaffoldBackgroundColor;
 
   bool get isDark => Theme.of(this).brightness == Brightness.dark;
-
-  TextStyle? get buttonTextStyle =>
-      Theme.of(this).textTheme.titleSmall?.copyWith(
-            fontWeight: FontWeight.w700,
-            color: kWhite,
-            fontSize: 12,
-          );
-
-  TextStyle? get outlinedButtonTextStyle =>
-      Theme.of(this).textTheme.titleSmall?.copyWith(
-            fontWeight: FontWeight.w700,
-            color: kPrimaryColor,
-            fontSize: 12,
-          );
 
   void openDrawer() => Scaffold.of(this).openDrawer();
 
