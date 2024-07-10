@@ -31,7 +31,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           const SizedBox(width: 10),
           Expanded(
             child: Text(
-              "Flutter Test",
+              "Flutter Task",
               textAlign: TextAlign.start,
               style: context.appTextTheme.bodyLarge?.copyWith(
                 color: kBlackLight,
