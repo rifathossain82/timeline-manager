@@ -1,24 +1,59 @@
 import 'package:intl/intl.dart';
 
 extension DateTimeExtension on DateTime {
-  /// Returns the date in 'yyyy/MM/dd' format (e.g., 01/01/2023).
-  String get formattedDateWithSlashes {
-    return "$year/$month/$day";
+  String get formatCurrentDateInBengaliToDMMMM {
+    const bengaliLocale = 'bn';
+
+    /// Format the date in Bengali
+    final day = DateFormat.d(bengaliLocale).format(this);
+    final month = DateFormat.MMMM(bengaliLocale).format(this);
+
+    /// Convert the formatted date to Bengali numerals
+    final bengaliDay = day.split('').map((e) => _convertToBengaliNumeral(e)).join();
+    final bengaliMonth = month;
+
+    return '$bengaliDay $bengaliMonth';
   }
 
-  /// Returns the date in 'dd MMM yyyy' format (e.g., 01 Jan 2023).
-  String get formattedDate {
-    return DateFormat('dd MMM yyyy').format(this);
+  List<String> get formatCurrentDateInBengaliToDateAndDateName {
+    const bengaliLocale = 'bn';
+
+    /// Format the date in Bengali
+    final day = DateFormat.d(bengaliLocale).format(this);
+    final dayName = DateFormat.d().format(this);
+
+    /// Convert the formatted date to Bengali numerals
+    final bengaliDay = day.split('').map((e) => _convertToBengaliNumeral(e)).join();
+
+    return [_convertToBengaliShortDayName(weekday.toString()), bengaliDay];
   }
 
-  /// Returns the date and time in 'dd MMM yyyy, hh:mm AM/PM' format.
-  /// (e.g., 01 Jan 2023, 03:30 PM).
-  String get formattedDateTime {
-    return DateFormat('dd MMM yyyy, hh:mm a').format(this);
+  String _convertToBengaliNumeral(String number) {
+    const englishToBengali = {
+      '0': '০',
+      '1': '১',
+      '2': '২',
+      '3': '৩',
+      '4': '৪',
+      '5': '৫',
+      '6': '৬',
+      '7': '৭',
+      '8': '৮',
+      '9': '৯',
+    };
+    return englishToBengali[number] ?? number;
   }
 
-  /// Returns the date in 'yyyy-MM-dd' format (e.g., 2023-01-01).
-  String get formattedRequestDate {
-    return DateFormat('yyyy-MM-dd').format(this);
+  String _convertToBengaliShortDayName(String number) {
+    const englishToBengali = {
+      '1': 'সোম',
+      '2': 'মঙ্গল',
+      '3': 'বুধ',
+      '4': 'বৃহঃ',
+      '5': 'শুক্র',
+      '6': 'শনি',
+      '7': 'রবি',
+    };
+    return englishToBengali[number] ?? number;
   }
 }

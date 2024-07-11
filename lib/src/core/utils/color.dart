@@ -19,8 +19,10 @@ const Color kGrey = Color(0xFF9EA1B6);
 const Color kGreyLight = Color(0xFFF4F5F6);
 const Color kGreyTextColor = Color(0xFF6A6A6A);
 
-const Color greyCardColor = Color(0xFFF5F5F5);
+const Color primaryCardColor = Color(0xFFF5F5F5);
+const Color secondaryCardColor = Color(0xFFFDFDFD);
 const Color menuBackgroundColor = Color(0xFFF6F6F6);
+Color kShadowColor = const Color(0xFF000000).withOpacity(0.15);
 const Color kDividerColor = Color(0xFFE8ECF2);
 const Color kShimmerBaseColor = Color(0xFFE0E0E0);
 const Color kShimmerHighlightColor = Color(0xFFF5F5F5);

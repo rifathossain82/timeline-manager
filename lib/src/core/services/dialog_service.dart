@@ -1,75 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
-import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
-import 'package:timeline_manager/src/core/utils/color.dart';
-import 'package:timeline_manager/src/core/widgets/k_button.dart';
-import 'package:timeline_manager/src/core/widgets/k_outlined_button.dart';
 
 class DialogService {
-  static Future<bool?> confirmationDialog({
-    required BuildContext context,
-    required String title,
-    required String subtitle,
-    required String negativeActionText,
-    required String positiveActionText,
-  }) {
-    return showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
-          ),
-          title: Text(
-            title,
-            style: context.appTextTheme.titleLarge,
-          ),
-          content: Text(
-            subtitle,
-            style: context.appTextTheme.bodySmall,
-          ),
-          titlePadding: const EdgeInsets.only(
-            left: 15,
-            right: 15,
-            top: 15,
-          ),
-          contentPadding: const EdgeInsets.all(15),
-          actionsPadding: const EdgeInsets.all(15.0),
-          actions: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: KOutlinedButton(
-                    onPressed: () => Navigator.pop(context, false),
-                    borderColor: kPrimaryColor,
-                    borderRadius: 4,
-                    child: Text(
-                      negativeActionText,
-                      style: context.outlinedButtonTextStyle(),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: KButton(
-                    onPressed: () => Navigator.pop(context, true),
-                    bgColor: kPrimaryColor,
-                    borderRadius: 4,
-                    child: Text(
-                      positiveActionText,
-                      style: context.buttonTextStyle(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   static Future<bool?> customDialog({
     required BuildContext context,
     required String title,

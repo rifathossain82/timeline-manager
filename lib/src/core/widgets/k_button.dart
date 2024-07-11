@@ -8,7 +8,6 @@ class KButton extends StatelessWidget {
     this.onPressed,
     required this.child,
     this.borderRadius,
-    this.bgColor,
     this.height,
     this.width,
   });
@@ -16,23 +15,33 @@ class KButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Widget child;
   final double? borderRadius;
-  final Color? bgColor;
   final double? height;
   final double? width;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      onPressed: onPressed,
-      shape: RoundedRectangleBorder(
+    return Container(
+      width: width ?? context.screenWidth,
+      height: height ?? 42,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            gradiantColor1,
+            gradiantColor2,
+          ],
+        ),
         borderRadius: BorderRadius.circular(borderRadius ?? 5),
       ),
-      color: bgColor ?? kPrimaryColor,
-      height: height ?? 42,
-      minWidth: width ?? context.screenWidth,
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      elevation: 0,
-      child: child,
+      child: MaterialButton(
+        onPressed: onPressed,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 5),
+        ),
+        color: Colors.transparent,
+        elevation: 0,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: child,
+      ),
     );
   }
 }
