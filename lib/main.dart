@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:timeline_manager/src/core/di/app_bindings.dart';
 import 'package:timeline_manager/src/core/routes/routes.dart';
 import 'package:timeline_manager/src/core/theme/app_theme.dart';
@@ -18,6 +19,9 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
+  /// Initialize Bengali date formatting
+  initializeDateFormatting('bn', null);
 
   runApp(const MyApp());
 }

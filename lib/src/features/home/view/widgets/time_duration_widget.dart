@@ -119,7 +119,7 @@ class _CircularChart extends StatelessWidget {
           painter: CircularChartPainter(
             percentage: percentage,
             gradientColors: gradientColors,
-            backgroundColor: greyCardColor,
+            backgroundColor: primaryCardColor,
           ),
         ),
         Text(
@@ -183,7 +183,7 @@ class _DateNumberCardItem extends StatelessWidget {
       width: 24,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: greyCardColor,
+        color: primaryCardColor,
         borderRadius: BorderRadius.circular(4),
         border: Border.all(
           width: 1,
