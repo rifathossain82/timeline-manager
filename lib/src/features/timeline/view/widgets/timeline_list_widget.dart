@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
+import 'package:timeline_manager/src/core/extensions/date_time_extension.dart';
 import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
+import 'package:timeline_manager/src/core/helpers/helper_methods.dart';
 import 'package:timeline_manager/src/core/utils/asset_path.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';
 import 'package:timeline_manager/src/core/widgets/failure_widget_builder.dart';
@@ -90,12 +92,13 @@ class _TimelineItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    kPrint("Date: ${timeline.date}");
     return Row(
       children: [
         Expanded(
           flex: 1,
           child: Text(
-            "সকাল\n১১:০০ মি.",
+            timeline.date?.formattedTimeOfDayWithCategory ?? "",
             textAlign: TextAlign.center,
             style: context.titleSmall(
               fontWeight: FontWeight.w500,
@@ -139,7 +142,7 @@ class _TimelineItemWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      "১১:০০ মি.",
+                      timeline.date?.formattedTimeOfDay ?? "",
                       style: context.bodyMedium(
                         fontWeight: FontWeight.w500,
                         color: secondaryCardColor,

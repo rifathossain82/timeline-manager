@@ -9,7 +9,8 @@ extension DateTimeExtension on DateTime {
     final month = DateFormat.MMMM(bengaliLocale).format(this);
 
     /// Convert the formatted date to Bengali numerals
-    final bengaliDay = day.split('').map((e) => _convertToBengaliNumeral(e)).join();
+    final bengaliDay =
+        day.split('').map((e) => _convertToBengaliNumeral(e)).join();
     final bengaliMonth = month;
 
     return '$bengaliDay $bengaliMonth';
@@ -20,12 +21,69 @@ extension DateTimeExtension on DateTime {
 
     /// Format the date in Bengali
     final day = DateFormat.d(bengaliLocale).format(this);
-    final dayName = DateFormat.d().format(this);
 
     /// Convert the formatted date to Bengali numerals
-    final bengaliDay = day.split('').map((e) => _convertToBengaliNumeral(e)).join();
+    final bengaliDay =
+        day.split('').map((e) => _convertToBengaliNumeral(e)).join();
 
     return [_convertToBengaliShortDayName(weekday.toString()), bengaliDay];
+  }
+
+  String get _timeOfDayCategory {
+    final hour = this.hour;
+    String timeCategory = "";
+
+    if (hour >= 0 && hour < 6) {
+      timeCategory = "রাত"; // 12:00 AM to 5:59 AM
+    } else if (hour < 12) {
+      timeCategory = "সকাল"; // 6:00 AM to 11:59 AM
+    } else if (hour < 18) {
+      timeCategory = "দুপুর"; // 12:00 PM to 5:59 PM
+    } else {
+      timeCategory = "সন্ধ্যা"; // 6:00 PM to 11:59 PM
+    }
+
+    return timeCategory;
+  }
+
+  String get formattedTimeOfDayWithCategory {
+    final hour = this.hour;
+
+    String formattedHour = hour
+        .toString()
+        .split('')
+        .map((e) => _convertToBengaliNumeral(e))
+        .join()
+        .padLeft(2, '০');
+
+    String formattedMinute = minute
+        .toString()
+        .split('')
+        .map((e) => _convertToBengaliNumeral(e))
+        .join()
+        .padLeft(2, '০');
+
+    return "$_timeOfDayCategory\n$formattedHour:$formattedMinute মি.";
+  }
+
+  String get formattedTimeOfDay {
+    final hour = this.hour;
+
+    String formattedHour = hour
+        .toString()
+        .split('')
+        .map((e) => _convertToBengaliNumeral(e))
+        .join()
+        .padLeft(2, '০');
+
+    String formattedMinute = minute
+        .toString()
+        .split('')
+        .map((e) => _convertToBengaliNumeral(e))
+        .join()
+        .padLeft(2, '০');
+
+    return "$formattedHour:$formattedMinute মি.";
   }
 
   String _convertToBengaliNumeral(String number) {
