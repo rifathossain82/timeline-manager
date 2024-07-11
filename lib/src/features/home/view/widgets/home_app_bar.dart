@@ -1,26 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
+import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
 import 'package:timeline_manager/src/core/utils/asset_path.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';
+import 'package:timeline_manager/src/core/utils/layout_constants.dart';
+import 'package:timeline_manager/src/core/widgets/main_app_bar.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      leading: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 15,
-        ),
-        child: SvgPicture.asset(
-          AssetPath.menuIcon,
-          height: 24,
-          width: 24,
-        ),
-      ),
-      titleSpacing: 0,
+    return MainAppBar(
       title: Row(
         children: [
           Image.asset(
@@ -33,37 +24,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Text(
               "Flutter Task",
               textAlign: TextAlign.start,
-              style: context.appTextTheme.bodyLarge?.copyWith(
-                color: kBlackLight,
+              style: context.titleMedium(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
               ),
             ),
           ),
         ],
       ),
-      actions: [
-        Container(
-          height: 35,
-          width: 35,
-          margin: const EdgeInsets.only(
-            right: 15,
-          ),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: kGreyLight,
-          ),
-          child: SvgPicture.asset(
-            AssetPath.notificationIcon,
-            height: 24,
-            width: 24,
-          ),
-        )
-      ],
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(LayoutConstants.appBarHeight);
 }
