@@ -34,6 +34,17 @@
 </table>
 
 
+<br>
+
+## Downloads
+
+### APK
+- [Download timeline-manager.apk](https://drive.google.com/file/d/1uBb_nphYRkiA8kJ8S_Mo2b882dozBF3J/view?usp=sharing)
+
+### Video Review
+- [Watch timeline-manager-review.mp4](https://drive.google.com/file/d/17XBUWvghMzMvYaFgyY7dn-3GySO2hQK8/view?usp=sharing)
+
+
 
 
 <br>
