@@ -1,6 +1,14 @@
 import 'package:intl/intl.dart';
 
 extension DateTimeExtension on DateTime {
+
+  /// Returns the date and time in 'dd MMM yyyy, hh:mm AM/PM' format.
+  /// (e.g., 01 Jan 2023, 03:30 PM).
+  String get formattedDateTime {
+    return DateFormat('dd MMM yyyy, hh:mm a').format(this);
+  }
+
+
   String get formatCurrentDateInBengaliToDMMMM {
     const bengaliLocale = 'bn';
 

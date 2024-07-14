@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
 import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';
@@ -10,8 +11,8 @@ class KTextFormFieldBuilderWithTitle extends StatelessWidget {
   final String? hintText;
   final String? secondaryHitText;
   final FocusNode? focusNode;
-  final IconData? prefixIconData;
-  final Widget? suffixIcon;
+  final String? prefixIconPath;
+  final String? suffixIconPath;
   final int maxLine;
   final int minLine;
   final Function(String value)? onChanged;
@@ -30,8 +31,8 @@ class KTextFormFieldBuilderWithTitle extends StatelessWidget {
     this.hintText,
     this.secondaryHitText,
     this.focusNode,
-    this.prefixIconData,
-    this.suffixIcon,
+    this.prefixIconPath,
+    this.suffixIconPath,
     this.maxLine = 1,
     this.minLine = 1,
     this.onChanged,
@@ -116,8 +117,55 @@ class KTextFormFieldBuilderWithTitle extends StatelessWidget {
                 width: 0.85,
               ),
             ),
-            prefixIcon: prefixIconData != null ? Icon(prefixIconData) : null,
-            suffixIcon: suffixIcon,
+            prefixIconConstraints: const BoxConstraints(
+              maxWidth: 50,
+              maxHeight: 50,
+              minHeight: 14,
+              minWidth: 14,
+            ),
+            prefixIcon: prefixIconPath != null
+                ? Padding(
+                    padding: const EdgeInsets.only(
+                      left: 14,
+                      right: 12,
+                    ),
+                    child: SvgPicture.asset(
+                      prefixIconPath!,
+                      height: 16,
+                      width: 16,
+                      alignment: Alignment.center,
+                      fit: BoxFit.fitWidth,
+                      colorFilter: const ColorFilter.mode(
+                        kGreyTextColor,
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            suffixIconConstraints: const BoxConstraints(
+              maxWidth: 50,
+              maxHeight: 50,
+              minHeight: 14,
+              minWidth: 14,
+            ),
+            suffixIcon: suffixIconPath != null
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: SvgPicture.asset(
+                      suffixIconPath!,
+                      height: 11,
+                      width: 11,
+                      alignment: Alignment.center,
+                      fit: BoxFit.fitWidth,
+                      colorFilter: const ColorFilter.mode(
+                        kGreyTextColor,
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                  )
+                : const SizedBox.shrink(),
           ),
         ),
         SizedBox(height: bottomPadding),

@@ -22,7 +22,7 @@ class KDropDownFieldBuilderWithTitle<T> extends StatelessWidget {
   final TextInputType? inputType;
   final TextInputAction? inputAction;
   final Widget? suffix;
-  final Widget? prefixIcon;
+  final String? prefixIconPath;
   final bool? obscureValue;
   final bool isBorder;
   final bool isEditable;
@@ -43,7 +43,7 @@ class KDropDownFieldBuilderWithTitle<T> extends StatelessWidget {
     this.inputType,
     this.inputAction,
     this.suffix,
-    this.prefixIcon,
+    this.prefixIconPath,
     this.obscureValue,
     this.isBorder = true,
     this.isEditable = true,
@@ -94,7 +94,31 @@ class KDropDownFieldBuilderWithTitle<T> extends StatelessWidget {
                     horizontal: 15,
                     vertical: 12,
                   ),
-                  prefixIcon: prefixIcon,
+                  prefixIconConstraints: const BoxConstraints(
+                    maxWidth: 50,
+                    maxHeight: 50,
+                    minHeight: 14,
+                    minWidth: 14,
+                  ),
+                  prefixIcon: prefixIconPath != null
+                      ? Padding(
+                          padding: const EdgeInsets.only(
+                            left: 14,
+                            right: 12,
+                          ),
+                          child: SvgPicture.asset(
+                            prefixIconPath!,
+                            height: 16,
+                            width: 16,
+                            alignment: Alignment.center,
+                            fit: BoxFit.fitWidth,
+                            colorFilter: const ColorFilter.mode(
+                              kGreyTextColor,
+                              BlendMode.srcIn,
+                            ),
+                          ),
+                        )
+                      : const SizedBox.shrink(),
                   isDense: true,
                   filled: true,
                   fillColor: secondaryCardColor,

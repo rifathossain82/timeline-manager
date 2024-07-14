@@ -30,12 +30,12 @@ class KButton extends StatelessWidget {
             gradiantColor2,
           ],
         ),
-        borderRadius: BorderRadius.circular(borderRadius ?? 5),
+        borderRadius: BorderRadius.circular(borderRadius ?? 8),
       ),
       child: MaterialButton(
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 5),
+          borderRadius: BorderRadius.circular(borderRadius ?? 8),
         ),
         color: Colors.transparent,
         elevation: 0,
