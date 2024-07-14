@@ -152,6 +152,7 @@ class _TimelineFormState extends State<_TimelineForm> {
                 secondaryHitText: "১২০ শব্দ",
                 minLine: 4,
                 maxLine: 4,
+                inputAction: TextInputAction.done,
                 controller: _paragraphDescriptionTextController,
               ),
               const SizedBox(height: 20),

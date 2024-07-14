@@ -1,4 +1,4 @@
-package com.example.timeline_manager
+package com.timelinemanager.app
 
 import io.flutter.embedding.android.FlutterActivity
 
