@@ -1,13 +1,19 @@
 import 'package:intl/intl.dart';
 
 extension DateTimeExtension on DateTime {
+  /// Returns the date and time in 'dd MMM yyyy, hh:mm AM/PM' format in Bengali.
+  String get formattedDateTimeInBengali {
+    final formattedDate = DateFormat('dd MMMM yyyy, hh:mm a', 'bn').format(this);
 
-  /// Returns the date and time in 'dd MMM yyyy, hh:mm AM/PM' format.
-  /// (e.g., 01 Jan 2023, 03:30 PM).
-  String get formattedDateTime {
-    return DateFormat('dd MMM yyyy, hh:mm a').format(this);
+    /// Convert English numerals to Bengali numerals
+    String formattedBanglaDate = _convertToBengaliNumeral(formattedDate);
+
+    /// Replace AM/PM with their Bengali equivalents
+    String finalOutput =
+        formattedBanglaDate.replaceAll('AM', 'এএম').replaceAll('PM', 'পিএম');
+
+    return finalOutput;
   }
-
 
   String get formatCurrentDateInBengaliToDMMMM {
     const bengaliLocale = 'bn';

@@ -1,6 +1,5 @@
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timeline_manager/src/core/errors/messages.dart';
-import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
 import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
 import 'package:timeline_manager/src/core/utils/asset_path.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
 import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
 import 'package:timeline_manager/src/core/utils/asset_path.dart';
-import 'package:timeline_manager/src/core/utils/color.dart';
 import 'package:timeline_manager/src/core/utils/layout_constants.dart';
 import 'package:timeline_manager/src/core/widgets/main_app_bar.dart';
 

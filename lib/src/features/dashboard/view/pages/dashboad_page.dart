@@ -14,7 +14,6 @@ class DashboardPage extends StatelessWidget {
     final dashboardController = Get.find<DashboardController>();
     return Obx(() {
       return Scaffold(
-        extendBody: true,
         body: dashboardController.currentPage,
         floatingActionButton: DashboardFloatingActionButton(
           dashboardController: dashboardController,

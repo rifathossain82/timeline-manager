@@ -17,37 +17,35 @@ class TimelineListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        width: context.screenWidth,
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: secondaryCardColor,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: kShadowColor,
-              spreadRadius: 0,
-              blurRadius: 5,
-              offset: const Offset(0.0, 0.0),
+    return Container(
+      width: context.screenWidth,
+      alignment: Alignment.center,
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        color: secondaryCardColor,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: kShadowColor,
+            spreadRadius: 0,
+            blurRadius: 5,
+            offset: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "আজকের কার্যক্রম",
+            textAlign: TextAlign.start,
+            style: context.titleMedium(
+              fontWeight: FontWeight.w700,
             ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "আজকের কার্যক্রম",
-              textAlign: TextAlign.start,
-              style: context.titleMedium(
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const _TimelineListView(),
-          ],
-        ),
+          ),
+          const SizedBox(height: 20),
+          const _TimelineListView(),
+        ],
       ),
     );
   }
@@ -63,20 +61,20 @@ class _TimelineListView extends StatelessWidget {
 
     return Obx(() {
       return timelineController.isTimelineListLoading.value
-          ? const KCustomLoader()
+          ? const KCustomLoader(height: 250)
           : timelineController.timelineList.isEmpty
-              ? const FailureWidgetBuilder()
-              : Expanded(
-                child: ListView.separated(
-                    itemCount: timelineController.timelineList.length,
-                    itemBuilder: (context, index) => _TimelineItemWidget(
-                      index: index,
-                      timeline: timelineController.timelineList[index],
-                    ),
-                    separatorBuilder: (context, index) =>
-                        const SizedBox(height: 16),
+              ? const FailureWidgetBuilder(height: 250)
+              : ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: timelineController.timelineList.length,
+                  itemBuilder: (context, index) => _TimelineItemWidget(
+                    index: index,
+                    timeline: timelineController.timelineList[index],
                   ),
-              );
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 16),
+                );
     });
   }
 }

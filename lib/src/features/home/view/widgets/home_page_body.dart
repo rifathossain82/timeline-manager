@@ -9,6 +9,7 @@ class HomepageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -18,6 +19,7 @@ class HomepageBody extends StatelessWidget {
             TimeDurationWidget(),
             SizedBox(height: 20),
             MenuItemsWidget(),
+            SizedBox(height: 20),
           ],
         ),
       ),

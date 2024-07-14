@@ -5,8 +5,15 @@ import 'package:timeline_manager/src/core/utils/color.dart';
 
 class KCustomLoader extends StatefulWidget {
   final String? titleText;
+  final double height;
+  final double width;
 
-  const KCustomLoader({Key? key, this.titleText}) : super(key: key);
+  const KCustomLoader({
+    Key? key,
+    this.titleText,
+    this.height = 250.0,
+    this.width = 250.0,
+  }) : super(key: key);
 
   @override
   State<KCustomLoader> createState() => _KCustomLoaderState();
@@ -43,8 +50,8 @@ class _KCustomLoaderState extends State<KCustomLoader>
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 200.0,
-        height: 200.0,
+        width: widget.width,
+        height: widget.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

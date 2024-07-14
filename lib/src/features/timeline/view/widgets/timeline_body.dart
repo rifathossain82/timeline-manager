@@ -12,19 +12,27 @@ class TimelineBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        children: [
-          DateAndButtonRowWidget(
-            dateText: DateTime.now().formatCurrentDateInBengaliToDMMMM,
-            buttonText: "নতুন যোগ করুন",
-            onButtonPressed: _onButtonPressed,
+      padding: const EdgeInsets.only(
+        bottom: 40,
+      ),
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              DateAndButtonRowWidget(
+                dateText: DateTime.now().formatCurrentDateInBengaliToDMMMM,
+                buttonText: "নতুন যোগ করুন",
+                onButtonPressed: _onButtonPressed,
+              ),
+              const SizedBox(height: 20),
+              const HorizontalDateListView(),
+              const SizedBox(height: 20),
+              const TimelineListWidget(),
+            ],
           ),
-          const SizedBox(height: 20),
-          const HorizontalDateListView(),
-          const SizedBox(height: 20),
-          const TimelineListWidget(),
-        ],
+        ),
       ),
     );
   }

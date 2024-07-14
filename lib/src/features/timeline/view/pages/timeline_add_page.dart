@@ -52,7 +52,7 @@ class _TimelineFormState extends State<_TimelineForm> {
       context: context,
       initialDate: selectedDateTime ?? DateTime.now(),
       firstDate: DateTime.now().subtract(const Duration(days: 365)),
-      lastDate: DateTime.now().add(const Duration(days: 30)),
+      lastDate: DateTime.now().add(const Duration(days: 365)),
     ).then((picked) async {
       if (picked != null) {
         final TimeOfDay? pickedTime = await showTimePicker(
@@ -70,7 +70,7 @@ class _TimelineFormState extends State<_TimelineForm> {
             );
 
             _dateTimeTextController.text =
-                selectedDateTime?.formattedDateTime ?? "";
+                selectedDateTime?.formattedDateTimeInBengali ?? "";
           });
         }
       }
