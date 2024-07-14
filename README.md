@@ -28,6 +28,8 @@
   <tr>
     <td><img src="https://github.com/user-attachments/assets/f455d534-b055-42f6-bfad-c24ba9d2c6ca" alt="Google Pixel 4 Screenshot 0" width="200" height="400"></td>
     <td><img src="https://github.com/user-attachments/assets/30a9bbab-d986-4503-95b2-b7282761a5b5" alt="Google Pixel 4 Screenshot 1" width="200" height="400"></td>
+    </tr>
+    <tr>
     <td><img src="https://github.com/user-attachments/assets/01380218-5357-4d1f-a4e0-80afa8855cd5" alt="Google Pixel 4 Screenshot 2" width="200" height="400"></td>
     <td><img src="https://github.com/user-attachments/assets/1a445e2c-4ce6-461c-9bff-4fbdccb79906" alt="Google Pixel 4 Screenshot 3" width="200" height="400"></td>
   </tr>
@@ -52,7 +54,7 @@
 ## Project Structure
 
 ```css
-cashbook_mini/
+timeline-manager/
 ├── assets/
 │   ├── images/
 │   └── icons/
