@@ -31,8 +31,4 @@ class AssetPath{
   static const String arrowForwardIcon = 'assets/icons/arrow_forward.svg';
   static const String successfulCheckedIcon = 'assets/icons/successful_checked_icon.svg';
 
-
-  /// lotties
-  static const String logoutLottie = "assets/lotties/logout_lottie.json";
-
 }

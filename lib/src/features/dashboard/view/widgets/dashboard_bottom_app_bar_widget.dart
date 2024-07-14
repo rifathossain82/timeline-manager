@@ -75,7 +75,7 @@ class _BottomAppBarItem extends StatelessWidget {
           children: <Widget>[
             SvgPicture.asset(
               isSelected ? item.selectedIconPath : item.unselectedIconPath,
-              colorFilter: ColorFilter.mode(kBlackLight, BlendMode.srcIn),
+              colorFilter: const ColorFilter.mode(kBlackLight, BlendMode.srcIn),
               height: 24,
               width: 24,
             ),
@@ -85,7 +85,7 @@ class _BottomAppBarItem extends StatelessWidget {
                     height: 4,
                     width: 4,
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: LinearGradient(
                         colors: [
