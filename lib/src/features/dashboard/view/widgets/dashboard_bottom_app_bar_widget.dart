@@ -64,11 +64,11 @@ class _BottomAppBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isSelected = currentIndex == item.index;
-    return SizedBox(
-      height: 75,
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: onPressed,
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: onPressed,
+      child: SizedBox(
+        height: 75,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,

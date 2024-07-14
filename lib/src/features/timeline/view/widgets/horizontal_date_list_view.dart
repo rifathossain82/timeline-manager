@@ -12,6 +12,7 @@ class HorizontalDateListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final timelineController = Get.find<TimelineController>()
+      ..updateSelectedDate(DateTime.now())
       ..fetchDateListFrom7DaysAgoTo7DaysLater();
 
     return Obx(() {
@@ -106,7 +107,10 @@ class _DateItemWidget extends StatelessWidget {
     });
   }
 
-  void _onTapDateItem() => timelineController.updateSelectedDate(dateTime);
+  void _onTapDateItem(){
+    timelineController.updateSelectedDate(dateTime);
+    timelineController.getTimelineList();
+  }
 
   bool get _isSelected =>
       dateTime.day == timelineController.selectedDate.value.day;

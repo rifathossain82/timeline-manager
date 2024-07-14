@@ -54,11 +54,13 @@ class TimeDurationWidget extends StatelessWidget {
                     width: 14,
                   ),
                   const SizedBox(width: 6),
-                  Text(
-                    "১ই জানুয়ারি ২০২৪ - ৩১ই জানুয়ারি ২০৩০",
-                    maxLines: 1,
-                    style: context.bodyMedium(
-                      fontWeight: FontWeight.w500,
+                  Expanded(
+                    child: Text(
+                      "১ই জানুয়ারি ২০২৪ - ৩১ই জানুয়ারি ২০৩০",
+                      maxLines: 1,
+                      style: context.bodyMedium(
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ],
