@@ -22,7 +22,7 @@ class DashboardFloatingActionButton extends StatelessWidget {
         height: 56,
         width: 56,
         alignment: Alignment.center,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           gradient: LinearGradient(
             colors: [
@@ -33,7 +33,7 @@ class DashboardFloatingActionButton extends StatelessWidget {
         ),
         child: SvgPicture.asset(
           AssetPath.cameraOutlinedIcon,
-          colorFilter: ColorFilter.mode(kWhite, BlendMode.srcIn),
+          colorFilter: const ColorFilter.mode(kWhite, BlendMode.srcIn),
           height: 32,
           width: 32,
         ),

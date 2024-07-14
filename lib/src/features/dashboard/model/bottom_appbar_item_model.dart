@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class BottomAppBarItemModel {
   final String selectedIconPath;
   final String unselectedIconPath;

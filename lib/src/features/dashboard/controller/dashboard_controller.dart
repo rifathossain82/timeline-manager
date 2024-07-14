@@ -13,9 +13,9 @@ class DashboardController extends GetxController {
   final List<Widget> _pages = [
     const Homepage(),
     const TimelinePage(),
-    const ColoredBox(color: Colors.orange),
-    const ColoredBox(color: Colors.pink),
-    const ColoredBox(color: Colors.green),
+    const SizedBox(),
+    const SizedBox(),
+    const SizedBox(),
   ];
 
   Widget get currentPage => _pages[currentIndex.value];

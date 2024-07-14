@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color kPrimaryColor = Color(0xFF3e60db);
+const Color kPrimaryColor = Color(0xFF336F4A);
 const Color kScaffoldBackgroundColor = Colors.white;
 
 const Color gradiantColor1 = Color(0xFF86B560);
@@ -29,19 +29,19 @@ const Color kShimmerBaseColor = Color(0xFFE0E0E0);
 const Color kShimmerHighlightColor = Color(0xFFF5F5F5);
 
 const Map<int, Color> materialColor = {
-  50: Color.fromRGBO(62,96,219, .1),
-  100: Color.fromRGBO(62,96,219, .2),
-  200: Color.fromRGBO(62,96,219, .3),
-  300: Color.fromRGBO(62,96,219, .4),
-  400: Color.fromRGBO(62,96,219, .5),
-  500: Color.fromRGBO(62,96,219, .6),
-  600: Color.fromRGBO(62,96,219, .7),
-  700: Color.fromRGBO(62,96,219, .8),
-  800: Color.fromRGBO(62,96,219, .9),
-  900: Color.fromRGBO(62,96,219, 1),
+  50: Color.fromRGBO(51, 111, 74, .1),
+  100: Color.fromRGBO(51, 111, 74, .2),
+  200: Color.fromRGBO(51, 111, 74, .3),
+  300: Color.fromRGBO(51, 111, 74, .4),
+  400: Color.fromRGBO(51, 111, 74, .5),
+  500: Color.fromRGBO(51, 111, 74, .6),
+  600: Color.fromRGBO(51, 111, 74, .7),
+  700: Color.fromRGBO(51, 111, 74, .8),
+  800: Color.fromRGBO(51, 111, 74, .9),
+  900: Color.fromRGBO(51, 111, 74, 1),
 };
 
 const MaterialColor kPrimarySwatchColor = MaterialColor(
-  0xFF3e60db,
+  0xFF336F4A,
   materialColor,
 );

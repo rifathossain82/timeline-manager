@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:timeline_manager/src/features/dashboard/view/pages/dashboad_page.dart';
+import 'package:timeline_manager/src/features/dashboard/view/pages/dashboard_page.dart';
 import 'package:timeline_manager/src/features/timeline/view/pages/timeline_add_page.dart';
 
 class RouteGenerator {

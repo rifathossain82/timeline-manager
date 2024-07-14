@@ -14,7 +14,6 @@ class TimelineController extends GetxController {
 
   void updateSelectedDate(DateTime dateTime) {
     selectedDate.value = dateTime;
-    getTimelineList();
   }
 
   void fetchDateListFrom7DaysAgoTo7DaysLater() {
