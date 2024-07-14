@@ -18,6 +18,7 @@ class AppTheme {
       elevation: 0,
       titleTextStyle: GoogleFonts.notoSerifBengali(
         fontSize: 16,
+        fontWeight: FontWeight.w700,
       ),
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Colors.white,
@@ -27,12 +28,12 @@ class AppTheme {
         statusBarBrightness: Brightness.light, // For iOS (dark icons)
       ),
     ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: kPrimaryColor,
       foregroundColor: kWhite,
     ),
     textTheme: GoogleFonts.notoSerifBengaliTextTheme(Typography.blackCupertino),
-    checkboxTheme: CheckboxThemeData(
+    checkboxTheme: const CheckboxThemeData(
       fillColor: MaterialStatePropertyAll(kPrimaryColor),
       checkColor: MaterialStatePropertyAll(kWhite),
       side: BorderSide(color: kGrey),
@@ -44,7 +45,7 @@ class AppTheme {
         borderRadius: BorderRadius.circular(5),
       ),
     ),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: kGrey,
     ),
   );

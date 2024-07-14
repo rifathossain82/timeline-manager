@@ -24,6 +24,7 @@ const Color secondaryCardColor = Color(0xFFFDFDFD);
 const Color menuBackgroundColor = Color(0xFFF6F6F6);
 Color kShadowColor = const Color(0xFF000000).withOpacity(0.15);
 const Color kDividerColor = Color(0xFFE8ECF2);
+const Color kTextFieldBorderColor = Color(0xFFF2F2F2);
 const Color kShimmerBaseColor = Color(0xFFE0E0E0);
 const Color kShimmerHighlightColor = Color(0xFFF5F5F5);
 

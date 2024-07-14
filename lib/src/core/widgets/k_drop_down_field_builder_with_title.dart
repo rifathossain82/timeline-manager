@@ -1,5 +1,8 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timeline_manager/src/core/errors/messages.dart';
 import 'package:timeline_manager/src/core/extensions/build_context_extension.dart';
+import 'package:timeline_manager/src/core/extensions/text_style_extension.dart';
+import 'package:timeline_manager/src/core/utils/asset_path.dart';
 import 'package:timeline_manager/src/core/utils/color.dart';
 import 'package:timeline_manager/src/core/widgets/k_button_progress_indicator.dart';
 import 'package:flutter/material.dart';
@@ -52,74 +55,91 @@ class KDropDownFieldBuilderWithTitle<T> extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: title,
-                style: context.appTextTheme.bodySmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              if (validatorActive)
-                TextSpan(
-                  text: ' *',
-                  style: context.appTextTheme.titleSmall?.copyWith(
-                    color: kRed,
-                  ),
-                ),
-            ],
+        Text(
+          title,
+          maxLines: 1,
+          textAlign: TextAlign.start,
+          overflow: TextOverflow.ellipsis,
+          style: context.titleMedium(
+            fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 8),
         isLoading
             ? Container(
-          height: 56,
-          width: double.infinity,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(
-              color: kGrey,
-              width: 1,
-            ),
-          ),
-          child: KButtonProgressIndicator(
-            indicatorColor: kPrimaryColor,
-          ),
-        )
+                height: 56,
+                width: double.infinity,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  border: Border.all(
+                    color: kGrey,
+                    width: 1,
+                  ),
+                ),
+                child: const KButtonProgressIndicator(
+                  indicatorColor: kPrimaryColor,
+                ),
+              )
             : DropdownButtonFormField(
-          validator: (value) {
-            if (validatorActive && items?.contains(value) == false) {
-              return Message.emptyField;
-            }
-            return null;
-          },
-          decoration: const InputDecoration(
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 12,
-            ),
-            isDense: true,
-            border: OutlineInputBorder(),
-          ),
-          isDense: true,
-          hint: Text(
-            hintText,
-            style: context.appTextTheme.bodySmall,
-          ),
-          items: items
-              ?.map(
-                (item) => DropdownMenuItem(
-              value: item,
-              child: itemBuilder(item),
-            ),
-          )
-              .toList(),
-          value: value,
-          onChanged: isEditable ? onChanged : null,
-        ),
-        const SizedBox(height: 15),
+                validator: (value) {
+                  if (validatorActive && items?.contains(value) == false) {
+                    return Message.emptyField;
+                  }
+                  return null;
+                },
+                elevation: 1,
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 12,
+                  ),
+                  prefixIcon: prefixIcon,
+                  isDense: true,
+                  filled: true,
+                  fillColor: secondaryCardColor,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4),
+                    borderSide: const BorderSide(
+                      color: kTextFieldBorderColor,
+                      width: 0.85,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4),
+                    borderSide: const BorderSide(
+                      color: kTextFieldBorderColor,
+                      width: 0.85,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4),
+                    borderSide: const BorderSide(
+                      color: kTextFieldBorderColor,
+                      width: 0.85,
+                    ),
+                  ),
+                ),
+                isDense: true,
+                hint: Text(
+                  hintText,
+                  style: context.bodyLarge(),
+                ),
+                items: items
+                    ?.map(
+                      (item) => DropdownMenuItem(
+                        value: item,
+                        child: itemBuilder(item),
+                      ),
+                    )
+                    .toList(),
+                value: value,
+                onChanged: isEditable ? onChanged : null,
+                icon: SvgPicture.asset(
+                  AssetPath.arrowForwardIcon,
+                ),
+              ),
+        const SizedBox(height: 20),
       ],
     );
   }

@@ -28,6 +28,7 @@ class AssetPath{
   static const String notificationIcon = 'assets/icons/notification.svg';
   static const String locationIcon = 'assets/icons/location.svg';
   static const String clockCircleIcon = 'assets/icons/clock_circle.svg';
+  static const String arrowForwardIcon = 'assets/icons/arrow_forward.svg';
 
 
   /// lotties
